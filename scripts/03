@@ -1,0 +1,33 @@
+#!/bin/bash
+echo -n "Как вас зовут?"
+read name
+echo "Привет, $name, Я script мастера Anjada"
+echo -n "Хочешь узнать погоду? (y/n)"
+read item
+case "$item" in
+ y|Y) curl wttr.in
+	 ;;
+ n|N) echo "Хм.."
+	 ;;
+	*) echo "Мда.."
+	 ;;
+esac
+echo "Может хочешь фильм посмотреть? (y/n)"
+read answer
+case "$answer" in
+	 y|Y) telnet towel.blinkenlights.nl
+	 ;;
+	 n|N) echo "Ты уверен? Классный фильм. (y/n)"
+		read it
+		case "$it" in
+ 		y|Y) telnet towel.blinkenlights.nl
+	 	;;
+ 		n|N) echo "Ну и ладно.."
+		 ;;
+		*) echo "Че ты просто enter тыкаешь?"
+		 ;;
+ 		esac
+	;;
+	*) echo "Ой, все.."
+	;;
+esac
